@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
    // }
     }
 
-    let trustedCheckOptionPrompt = kAXTrustedCheckOptionPrompt.takeRetainedValue() as NSString
+    let trustedCheckOptionPrompt = kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString
     let options = [trustedCheckOptionPrompt: true] as CFDictionary
     if AXIsProcessTrustedWithOptions(options) {
       setup()
